@@ -1,4 +1,4 @@
-import { Container, VStack, Input, SimpleGrid, Box, Heading, Image, Text } from "@chakra-ui/react";
+import { Container, VStack, Input, SimpleGrid, Box, Heading, Image, Text, Select, HStack } from "@chakra-ui/react";
 
 const Index = () => {
   const doors = [
@@ -19,8 +19,21 @@ const Index = () => {
           placeholder="Search for doors..."
           size="lg"
           variant="filled"
-          mb={8}
+          mb={4}
         />
+        <HStack spacing={4} mb={8}>
+          <Select placeholder="Select Age Period" size="lg" variant="filled">
+            <option value="victorian">Victorian</option>
+            <option value="modern">Modern</option>
+            <option value="classic">Classic</option>
+            <option value="rustic">Rustic</option>
+          </Select>
+          <Select placeholder="Select Size Range" size="lg" variant="filled">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+          </Select>
+        </HStack>
         <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
           {doors.map((door) => (
             <Box key={door.id} borderWidth="1px" borderRadius="lg" overflow="hidden">
